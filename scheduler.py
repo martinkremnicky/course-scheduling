@@ -43,7 +43,7 @@ def extract_mandatory(courses):
 
 def generate_quarter(courses, quarter):
     quarter_courses = extract_quarter(courses, quarter)
-    mandatory_courses = extract_mandatory(courses)
+    mandatory_courses = extract_mandatory(quarter_courses)
     optional_courses = list(set(quarter_courses) - set(mandatory_courses))
     return get_combinations(optional_courses, mandatory_courses, {10,15})
 
